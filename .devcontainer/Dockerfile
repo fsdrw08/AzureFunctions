@@ -25,6 +25,9 @@ FROM mcr.microsoft.com/azure-functions/dotnet:3.0-dotnet3-core-tools
 #     && /bin/bash /tmp/common-script.sh "$INSTALL_ZSH" "$USERNAME" "$USER_UID" "$USER_GID" \
 #     && rm /tmp/common-script.sh 
 
+# install vim for build-in editor
+RUN apt-get update && apt-get -y install vim
+
 # Install ngrok for local test
  RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -P ~/ \
     && unzip ~/ngrok-stable-linux-amd64.zip -d ~/ \
