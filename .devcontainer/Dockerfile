@@ -24,3 +24,8 @@ FROM mcr.microsoft.com/azure-functions/dotnet:3.0-dotnet3-core-tools
 # RUN apt-get update && curl -ssL https://raw.githubusercontent.com/microsoft/vscode-dev-containers/master/script-library/common-debian.sh -o /tmp/common-script.sh \
 #     && /bin/bash /tmp/common-script.sh "$INSTALL_ZSH" "$USERNAME" "$USER_UID" "$USER_GID" \
 #     && rm /tmp/common-script.sh 
+
+# Install ngrok for local test
+ RUN wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -P ~/ \
+    && unzip ~/ngrok-stable-linux-amd64.zip -d ~/ \
+    && sudo mv ~/ngrok /usr/local/bin/
