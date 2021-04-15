@@ -1,5 +1,12 @@
 https://docs.microsoft.com/en-us/graph/tutorials/azure-functions
 
+dotnet tool install --global dotnet-serve
+
+cat << \EOF >> ~/.bashrc
+# Add .NET Core SDK tools
+export PATH="$PATH:/home/vscode/.dotnet/tools"
+EOF
+
 # Azure Functions & C# - .NET Core 3.1
 
 ## Summary
